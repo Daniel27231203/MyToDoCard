@@ -1,0 +1,22 @@
+.Products {
+  padding: 20px 0;
+  .content {
+    h1 {
+      font-size: 30px;
+      letter-spacing: 3px;
+      font-family: sans-serif;
+      margin: 5px 0;
+    }
+    .block {
+      margin-top: 20px;
+      overflow-y: scroll;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 20px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

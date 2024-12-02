@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111; /* Тёмный фон */
+  color: #d450d4; /* Основной цвет текста */
+  padding: 20px 40px;
+  font-family: sans-serif;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 14px;
+  border-top: 2px solid #d450d4; /* Верхняя линия */
+}
+
+.links {
+  display: flex;
+  gap: 20px; /* Расстояние между ссылками */
+}
+
+.link {
+  color: #d450d4; /* Цвет ссылок */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.link:hover {
+  color: #702070; /* Цвет при наведении */
+}
+
+.copyright {
+  font-size: 12px;
+  font-weight: 400;
+}

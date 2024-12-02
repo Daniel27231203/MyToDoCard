@@ -1,0 +1,85 @@
+.CreatePage {
+  .content {
+    h1 {
+      font-size: 30px;
+      letter-spacing: 3px;
+      font-family: sans-serif;
+      margin-bottom: 20px;
+      span {
+        color: rgb(189, 72, 189);
+      }
+    }
+    .createBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 400px;
+        input {
+          width: 100%;
+          padding: 10px;
+          background: none;
+          border: 1px solid rgb(159, 80, 159);
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          &:hover {
+            transform: scale(1.05);
+            background: rgb(146, 42, 146);
+            color: white;
+            border: none;
+          }
+        }
+        select {
+          width: 100%;
+          padding: 10px;
+          outline: none;
+          background: none;
+          border: 1px solid rgb(159, 80, 159);
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          &:hover {
+            transform: scale(1.05);
+            background: rgb(146, 42, 146);
+            color: white;
+            border: none;
+          }
+        }
+        textarea {
+          width: 100%;
+          padding: 10px;
+          background: none;
+          border: 1px solid rgb(159, 80, 159);
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          &:hover {
+            transform: scale(1.05);
+            background: rgb(146, 42, 146);
+            color: white;
+            border: none;
+          }
+        }
+        button {
+          width: 100%;
+          padding: 10px;
+          background: rgb(146, 42, 146);
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          color: white;
+          border: none;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.05);
+            background: none;
+            color: rgb(159, 80, 159);
+            border: none;
+            border: 1px solid rgb(159, 80, 159);
+          }
+        }
+      }
+    }
+  }
+}

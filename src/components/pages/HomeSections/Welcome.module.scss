@@ -1,0 +1,61 @@
+.Welcome {
+  .content {
+    h1 {
+      font-size: 30px;
+      letter-spacing: 3px;
+      font-family: sans-serif;
+      margin: 5px 0;
+    }
+    p {
+      font-size: 16px;
+    }
+    .block {
+      padding: 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      .rightBox {
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h3 {
+          font-size: 35px;
+          span {
+            color: rgb(210, 95, 210);
+          }
+        }
+        p {
+          font-size: 25px;
+          font-family: sans-serif;
+          letter-spacing: 1px;
+        }
+        a {
+          button {
+            padding: 15px 30px;
+            border-radius: 15px;
+            border: 1px solid violet;
+            background: none;
+            color: violet;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            &:hover {
+              transform: scale(1.05);
+              background: rgb(146, 42, 146);
+              color: white;
+              border: none;
+            }
+          }
+        }
+      }
+      .leftBox {
+        img {
+          width: 500px;
+          height: auto;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}

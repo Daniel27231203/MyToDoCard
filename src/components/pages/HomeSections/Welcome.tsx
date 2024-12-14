@@ -35,7 +35,7 @@ const Welcome: FC = () => {
                 integration.
               </p>
               <Link
-                href="https://github.com/daniel-fernandez-garcia/MyTodoCard"
+                href="https://github.com/Daniel27231203/MyToDoCard"
                 target="_blank"
                 rel="noopener noreferrer"
               >

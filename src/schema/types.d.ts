@@ -5,6 +5,7 @@ interface ProductPost {
   description: string;
   raiting: number;
   price: number;
+  detailImage: string[];
 }
 
 interface ProductGet {
@@ -15,6 +16,18 @@ interface ProductGet {
   description: string;
   raiting: number;
   price: number;
+  detailImage: string[];
+
   createdAt?: string;
   updatedAt?: string;
+}
+
+interface ProductBasket {
+  id?: number;
+  title: string;
+  photo: string;
+  category: string;
+  raiting: number;
+  price: number;
+  quantity: number;
 }

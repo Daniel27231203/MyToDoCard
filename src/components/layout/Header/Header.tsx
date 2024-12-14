@@ -1,9 +1,15 @@
-import { FC } from "react";
+"use client";
+import { FC, useState } from "react";
 import scss from "./Header.module.scss";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
+import useStore from "@/zustand/store";
+import { useRouter } from "next/navigation";
 
 const Header: FC = () => {
+  const { basket } = useStore();
+  const { search, setSearch } = useStore();
+  const router = useRouter();
   return (
     <header className={scss.header}>
       <div className="container">
@@ -25,10 +31,20 @@ const Header: FC = () => {
               <Link className={scss.Link} href={"/create"}>
                 Create
               </Link>
+              {basket.length ? <span>{basket.length}</span> : null}
             </nav>
             <div className={scss.search}>
-              <input placeholder="search..." type="text" />
-              <button>
+              <input
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="search..."
+                type="text"
+              />
+              <button
+                onClick={() => {
+                  router.push(`/product/${search}`);
+                  setSearch(search);
+                }}
+              >
                 <CiSearch />
               </button>
             </div>

@@ -6,6 +6,7 @@ import { MdDelete } from "react-icons/md";
 import { IoPencilOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import { useDeleteProductMutation } from "@/redux/api/product";
+import useStore from "@/zustand/store";
 
 interface ProductProps {
   item: ProductGet;
@@ -13,6 +14,7 @@ interface ProductProps {
 const Product: FC<ProductProps> = ({ item }) => {
   const router = useRouter();
   const [deleteProductMutation] = useDeleteProductMutation();
+  const { basket, addToCart } = useStore();
   const renderStars = useCallback(
     (rating: number) => (
       <>
@@ -26,6 +28,29 @@ const Product: FC<ProductProps> = ({ item }) => {
     ),
     []
   );
+
+  const handleAddToCart = (id: number) => {
+    if (id === item.id) {
+      try {
+        const basketData: ProductBasket = {
+          id: item.id!,
+          title: item.title,
+          price: item.price,
+          photo: item.photo,
+          raiting: item.raiting,
+          category: item.category,
+          quantity: 1,
+        };
+        addToCart({ ...basketData });
+        router.push("/order");
+      } catch (e) {
+        console.error(e);
+        alert("Error adding product to cart");
+      }
+    } else {
+      return console.error("Error adding product");
+    }
+  };
 
   return (
     <div className={scss.box}>
@@ -56,7 +81,13 @@ const Product: FC<ProductProps> = ({ item }) => {
         </div>
         <div className={scss.priceBox}>
           <span>{item.price}$</span>
-          <button>Add to cart</button>
+          <button
+            onClick={() => {
+              handleAddToCart(item.id!);
+            }}
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     </div>

@@ -10,8 +10,7 @@ import {
 import { useRouter, useSearchParams } from "next/navigation";
 
 const CreatePage: FC = () => {
-  const { register, handleSubmit, reset, setValue, getValues } =
-    useForm<ProductPost>();
+  const { register, handleSubmit, reset } = useForm<ProductPost>();
   const [createProductsMutation] = useCreateProductsMutation();
   const { data } = useGetProductsQuery();
   const [editProductsMutation] = useEditProductsMutation();
@@ -21,6 +20,10 @@ const CreatePage: FC = () => {
   const router = useRouter();
 
   const onSubmit: SubmitHandler<ProductPost> = async (data) => {
+    console.log(
+      "��� ~ SaveProduct:SubmitHandler<ProductPost>= ~ data:",
+      data.category
+    );
     const productData = {
       title: data.title,
       price: +data.price,
@@ -28,6 +31,7 @@ const CreatePage: FC = () => {
       photo: data.photo,
       description: data.description,
       raiting: +data.raiting,
+      detailImage: data.detailImage,
     };
     try {
       const { data } = await createProductsMutation(productData);
@@ -47,6 +51,7 @@ const CreatePage: FC = () => {
       photo: data.photo,
       description: data.description,
       raiting: +data.raiting,
+      detailImage: data.detailImage,
     };
     console.log(newData);
     try {
@@ -82,9 +87,7 @@ const CreatePage: FC = () => {
                 defaultValue={EdidProduct?.price}
               />
               <select
-                {...register("category", { required: true })}
-                name=""
-                id=""
+                {...register("category", { required: "Category is required" })}
                 defaultValue={EdidProduct?.category}
               >
                 <option value="electronic">electronic</option>
@@ -98,6 +101,12 @@ const CreatePage: FC = () => {
                 placeholder="Product Photo URL"
                 defaultValue={EdidProduct?.photo}
               />
+              {/* <input
+                {...register("detailImage", { required: true })}
+                type="text"
+                placeholder="Product Photo URL"
+                defaultValue={EdidProduct?.detailImage}
+              /> */}
               <input
                 {...register("raiting", { required: true })}
                 type="number"

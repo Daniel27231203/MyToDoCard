@@ -1,0 +1,181 @@
+.OrderPage {
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    .orderHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h1 {
+        font-size: 30px;
+        color: white;
+        span {
+          color: rgb(152, 63, 152);
+          font-family: sans-serif;
+        }
+      }
+      button {
+        padding: 10px 30px;
+        border-radius: 15px;
+        border: 1px solid violet;
+        background: none;
+        color: violet;
+        font-size: 20px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.05);
+          background: rgb(146, 42, 146);
+          color: white;
+          border: none;
+        }
+      }
+    }
+    .tableContainer {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      .orderTable {
+        width: 80%;
+        border-collapse: collapse;
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+
+        th,
+        td {
+          padding: 10px 15px;
+          text-align: center;
+          border: 1px solid #c084fc;
+          img {
+            width: 70px;
+          }
+          button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: rgb(182, 94, 182);
+            transition: transform 0.3s ease;
+            &:hover {
+              transform: scale(1.9);
+            }
+          }
+          .quantitybox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+          }
+        }
+
+        th {
+          background-color: #3b3b3b;
+          color: #c084fc;
+        }
+
+        tr:hover {
+          background-color: #292929;
+        }
+      }
+
+      .emptyMessage {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: #c084fc;
+      }
+      .total {
+        position: absolute;
+        right: 400px;
+        padding: 10px 0;
+        border-bottom: 2px solid #c084fc;
+        width: 250px;
+        text-align: center;
+      }
+    }
+
+    .telegramGo {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 40px;
+      img {
+        width: 500px;
+        height: auto;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 400px;
+        input {
+          width: 100%;
+          padding: 10px;
+          background: none;
+          border: 1px solid rgb(159, 80, 159);
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          &:hover {
+            transform: scale(1.05);
+            background: rgb(146, 42, 146);
+            color: white;
+            border: none;
+          }
+        }
+        select {
+          width: 100%;
+          padding: 10px;
+          outline: none;
+          background: none;
+          border: 1px solid rgb(159, 80, 159);
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          &:hover {
+            transform: scale(1.05);
+            background: rgb(146, 42, 146);
+            color: white;
+            border: none;
+          }
+        }
+        textarea {
+          width: 100%;
+          padding: 10px;
+          background: none;
+          border: 1px solid rgb(159, 80, 159);
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          &:hover {
+            transform: scale(1.05);
+            background: rgb(146, 42, 146);
+            color: white;
+            border: none;
+          }
+        }
+        button {
+          width: 100%;
+          padding: 10px;
+          background: rgb(146, 42, 146);
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          color: white;
+          border: none;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.05);
+            background: none;
+            color: rgb(159, 80, 159);
+            border: none;
+            border: 1px solid rgb(159, 80, 159);
+          }
+        }
+      }
+    }
+    .empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+    }
+  }
+}
